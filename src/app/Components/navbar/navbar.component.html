@@ -1,0 +1,13 @@
+<header [class.pinned]="isPinned" [class.hidden]="isHidden">
+  <nav>
+    <div class="logo">
+      <img src="./assets/images/ethos.png" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="#about" (click)="scrollToSection('about')">About</a></li>
+      <li><a href="#classes" (click)="scrollToSection('classes')">Classes</a></li>
+      <li><a href="#schedule" (click)="scrollToSection('schedule')">Schedule</a></li>
+      <li (click)="Take_to_contact_Us()"><a>Contact</a></li>
+    </ul>
+  </nav>
+</header>

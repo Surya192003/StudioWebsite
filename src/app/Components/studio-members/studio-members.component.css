@@ -1,0 +1,48 @@
+/* The container for the entire carousel */
+.carousel-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* The outer container that holds all the items */
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  /* The inner container that holds the carousel items */
+  .carousel-items {
+    display: flex;
+    transition: transform 20s linear; /* Smooth transition of the container */
+  }
+  
+  /* Each item in the carousel */
+  .carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 25%;  /* 4 items will take up 100% of the width */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .carousel-item p {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
