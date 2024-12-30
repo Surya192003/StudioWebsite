@@ -7,9 +7,13 @@ import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 isHidden: any;
+phoneNumber: string = '+918179091230';
+message: string = '';
   constructor(public router : Router) {}
   Take_to_contact_Us(){
-    this.router.navigate(["/Contact_Us"])
+    const formattedMessage = encodeURIComponent(this.message);
+    const whatsappURL = `https://wa.me/${this.phoneNumber}?text=${formattedMessage}`;
+    window.open(whatsappURL, '_blank');
   }
   isPinned: boolean = false;
   private lastScrollTop: number = 0;
