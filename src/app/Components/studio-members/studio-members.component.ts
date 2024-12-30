@@ -1,37 +1,52 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-studio-members',
   templateUrl: './studio-members.component.html',
   styleUrls: ['./studio-members.component.css'],
-  animations: [
-    trigger('scrolling', [
-      transition('* => *', [
-        style({ transform: 'translateX(0)' }),
-        animate('10s linear', style({ transform: 'translateX(-100%)' })) // Adjust to change speed
-      ])
-    ])
-  ]
 })
 export class StudioMembersComponent implements OnInit {
 
+  // Define each member with their name, photo, and Instagram link
   members = [
-    { name: 'John Doe', photo: 'assets/images/member-1.jpg' },
-    { name: 'Jane Smith', photo: 'assets/images/member-2.jpg' },
-    { name: 'Alice Johnson', photo: 'assets/images/member-3.jpg' },
-    { name: 'John Doe', photo: 'assets/images/member-1.jpg' },
-    { name: 'Jane Smith', photo: 'assets/images/member-2.jpg' },
-    { name: 'Alice Johnson', photo: 'assets/images/member-3.jpg' },
-    { name: 'John Doe', photo: 'assets/images/member-1.jpg' },
-    { name: 'Jane Smith', photo: 'assets/images/member-2.jpg' },
-    { name: 'Alice Johnson', photo: 'assets/images/member-3.jpg' }
+    { 
+      name: 'Sreekanth Chirkya', 
+      photo: './assets/images/Sreekanth_sir.jpg',
+      instagram: 'https://www.instagram.com/sreekanth_chirkya?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+    },
+    { 
+      name: 'Arjun Manikanta', 
+      photo: './assets/images/AM_sir.jpg',
+      instagram: 'https://www.instagram.com/i_arjunmani?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+    },
+    { 
+      name: 'Sravani', 
+      photo: './assets/images/Sravani_mam.jpg',
+      instagram: 'https://www.instagram.com/alahari_sravani?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+    },
+    { 
+      name: 'Geethika', 
+      photo: './assets/images/Geethika_mam.jpg',
+      instagram: 'https://www.instagram.com/geethika_3?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+    },
+    { 
+      name: 'Gowtham', 
+      photo: './assets/images/gowtham_anna.jpg',
+      instagram: 'https://www.instagram.com/gowthamuuuu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+    },
+    { 
+      name: 'Prudhvi', 
+      photo: './assets/images/prudhvi.jpg',
+      instagram: 'https://www.instagram.com/prudhvirajupenumatsa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+    },
   ];
-
-  // Duplicating the array to simulate infinite scroll
-  membersToDisplay = [...this.members, ...this.members];
 
   constructor() { }
 
   ngOnInit(): void { }
+
+  // Method to redirect to Instagram profile
+  goToInstagram(instagramUrl: string) {
+    window.open(instagramUrl, '_blank');
+  }
 }

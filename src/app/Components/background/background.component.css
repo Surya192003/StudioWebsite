@@ -128,7 +128,7 @@
     position: relative;
     z-index: 2;
     height: 100vh;
-    background-color: #0811fb;
+    background-color: #515151;
     overflow: hidden; }
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
       .welcome-area {

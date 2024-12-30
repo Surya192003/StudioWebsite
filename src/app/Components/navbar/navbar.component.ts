@@ -43,7 +43,7 @@ isHidden: any;
     }
 
     // Update last scroll position
-    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    this.lastScrollTop = currentScroll <= 100 ? 100 : currentScroll;
   }
 
   hideNavbar() {

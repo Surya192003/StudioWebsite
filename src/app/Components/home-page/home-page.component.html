@@ -3,38 +3,63 @@
 <div class="home-container">
   <app-navbar></app-navbar>
   <app-background></app-background>
-  <!-- About Us Section -->
-  <section id="about" class="section">
-    <h2>About Us</h2>
-    <div class="about-content">
-      <div class="text">
-        <p>Welcome to Ethos, where passion meets movement! Our dance studio provides a nurturing environment for dancers of all ages and skill levels. From beginners to advanced, we cater to everyone who wants to explore dance.</p>
-        <p>Our team of professional instructors is dedicated to helping you grow as a dancer. Whether you’re looking to improve your technique, increase fitness, or simply have fun, Ethos is the place for you!</p>
-      </div>
-      <div class="image">
-        <img src="assets/images/about-dance.jpg" alt="Dancers in motion">
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Classes Section -->
-  <section id="classes" class="section">
-    <h2>Our Classes</h2>
-    <div class="classes-content">
+ <!-- About Us Section -->
+<section id="about" class="section" style="margin-top: 2%;">
+  <h2>About Us</h2>
+  <div class="about-content">
+    <div class="text">
+      <p>Welcome to Ethos, where passion meets movement! Our dance studio provides a nurturing environment for dancers of all ages and skill levels. From beginners to advanced, we cater to everyone who wants to explore dance.</p>
+      <p>Our team of professional instructors is dedicated to helping you grow as a dancer. Whether you’re looking to improve your technique, increase fitness, or simply have fun, Ethos is the place for you!</p>
+      <p>Founded in 2010, Ethos Dance Studio has been at the heart of the community, offering a wide range of dance classes for individuals, families, and even corporate teams. We believe in the power of movement to inspire creativity, build strength, and promote emotional well-being.</p>
+      <p>At Ethos, we embrace dancers of all backgrounds and experiences. We celebrate each student’s unique journey, and our instructors work closely with you to help you achieve your personal dance goals. Whether you're taking your first class or preparing for your next performance, we're here to support you every step of the way!</p>
+      <h3>Our Mission</h3>
+      <p>Our mission is to provide a space where everyone feels welcomed and inspired to explore the world of dance, foster artistic expression, and build lasting connections.</p>
+      <h3>What We Offer</h3>
       <ul>
-        <li><strong>Jazz Dance:</strong> A lively and energetic dance style that blends classical ballet with modern moves. Great for boosting flexibility and strength.</li>
-        <li><strong>Ballet:</strong> A classical dance form known for its graceful, controlled movements. Perfect for building posture, flexibility, and technique.</li>
-        <li><strong>Hip Hop:</strong> A dynamic and expressive style that combines street dance, breakdancing, and freestyle. Focuses on rhythm, coordination, and personal expression.</li>
-        <li><strong>Contemporary Dance:</strong> A versatile dance form that incorporates elements of modern dance, ballet, and jazz. Known for its freedom of movement and emotional expression.</li>
-        <li><strong>Tap Dance:</strong> A rhythmic dance form where dancers use their shoes to create percussive sounds. It’s perfect for rhythm training and coordination.</li>
-        <li><strong>Dance for Kids:</strong> Fun and engaging classes designed to teach children the basics of dance while fostering creativity, coordination, and self-confidence.</li>
-        <li><strong>Adult Dance Fitness:</strong> A fun way for adults to stay active and fit through dance. These classes blend dance styles with fitness exercises to improve strength and flexibility.</li>
+        <li>Personalized Dance Training</li>
+        <li>Fitness & Wellness Programs</li>
+        <li>Community Engagement & Performances</li>
+        <li>Private & Group Classes</li>
+        <li>Workshops & Masterclasses with Industry Professionals</li>
       </ul>
-      <div class="image">
-        <img src="assets/images/classes.jpg" alt="Dancers practicing">
-      </div>
     </div>
-  </section>
+
+    <div class="image">
+      <video #videoPlayer autoplay loop [muted]="videos[0].isMuted" (ended)="onVideoEnd()">
+        <source src="./assets/images/dance.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button (click)="toggleMute(0)">
+        {{ videos[0].isMuted ? 'Unmute' : 'Mute' }}
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Our Classes Section -->
+<section id="classes" class="section">
+  <h2>Our Classes</h2>
+  <div class="classes-content">
+    <ul>
+      <li><strong>Jazz Dance:</strong> A lively and energetic dance style that blends classical ballet with modern moves. Perfect for boosting flexibility, strength, and rhythm. Classes are designed for all levels.</li>
+      <li><strong>Ballet:</strong> A classical dance form known for its graceful, controlled movements. Our ballet classes focus on building posture, flexibility, and technique, perfect for beginners and advanced dancers alike.</li>
+      <li><strong>Hip Hop:</strong> A dynamic and expressive style that combines street dance, breakdancing, and freestyle. Focuses on rhythm, coordination, and personal expression. Recommended for dancers looking to develop creativity and strength.</li>
+      <li><strong>Contemporary Dance:</strong> A versatile dance form that incorporates elements of modern dance, ballet, and jazz. Known for its freedom of movement and emotional expression, this class is perfect for dancers looking to explore new styles.</li>
+      <li><strong>Tap Dance:</strong> A rhythmic dance form where dancers use their shoes to create percussive sounds. Tap dance helps improve coordination and rhythm and is suitable for all age groups.</li>
+      <li><strong>Dance for Kids:</strong> Fun and engaging classes designed to teach children the basics of dance while fostering creativity, coordination, and self-confidence. Classes are tailored to different age groups (3-5 years, 6-8 years, etc.).</li>
+      <li><strong>Adult Dance Fitness:</strong> A fun and energetic way for adults to stay active through dance. Classes are designed to improve strength, flexibility, and cardiovascular health. This class incorporates a variety of dance styles.</li>
+    </ul>
+    <div class="image">
+      <video #videoPlayer autoplay loop [muted]="videos[1].isMuted" (ended)="onVideoEnd()">
+        <source src="./assets/images/practice.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button (click)="toggleMute(1)">
+        {{ videos[1].isMuted ? 'Unmute' : 'Mute' }}
+      </button>
+    </div>
+  </div>
+</section>
 
   <!-- Schedule Section -->
   <section id="schedule" class="section">
@@ -51,66 +76,71 @@
         <tbody>
           <tr>
             <td>Monday</td>
-            <td>6:00 PM - Jazz Dance</td>
-            <td>7:30 PM - Ballet</td>
+            <td>6:00 PM - Jazz Dance (Instructor: John Doe)</td>
+            <td>7:30 PM - Ballet (Instructor: Jane Smith)</td>
           </tr>
           <tr>
             <td>Tuesday</td>
-            <td>5:30 PM - Hip Hop</td>
-            <td>7:00 PM - Contemporary Dance</td>
+            <td>5:30 PM - Hip Hop (Instructor: Emily Davis)</td>
+            <td>7:00 PM - Contemporary Dance (Instructor: John Doe)</td>
           </tr>
           <tr>
             <td>Wednesday</td>
-            <td>6:00 PM - Tap Dance</td>
-            <td>7:30 PM - Dance for Kids</td>
+            <td>6:00 PM - Tap Dance (Instructor: Sarah Lee)</td>
+            <td>7:30 PM - Dance for Kids (Instructor: Alex Williams)</td>
           </tr>
           <tr>
             <td>Thursday</td>
-            <td>5:30 PM - Adult Dance Fitness</td>
-            <td>7:00 PM - Hip Hop</td>
+            <td>5:30 PM - Adult Dance Fitness (Instructor: Jessica Brown)</td>
+            <td>7:00 PM - Hip Hop (Instructor: Emily Davis)</td>
           </tr>
           <tr>
             <td>Friday</td>
-            <td>6:00 PM - Ballet</td>
-            <td>7:30 PM - Contemporary Dance</td>
+            <td>6:00 PM - Ballet (Instructor: Jane Smith)</td>
+            <td>7:30 PM - Contemporary Dance (Instructor: John Doe)</td>
           </tr>
           <tr>
             <td>Saturday</td>
-            <td>10:00 AM - Tap Dance</td>
-            <td>11:30 AM - Dance for Kids</td>
+            <td>10:00 AM - Tap Dance (Instructor: Sarah Lee)</td>
+            <td>11:30 AM - Dance for Kids (Instructor: Alex Williams)</td>
           </tr>
           <tr>
             <td>Sunday</td>
-            <td colspan="2">5:00 PM - Adult Dance Fitness</td>
+            <td colspan="2">5:00 PM - Adult Dance Fitness (Instructor: Jessica Brown)</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
+  
 
   <!-- Crew Section -->
-  <section id="crew" class="section">
+  
+  
+
+  <!-- Studio Members Carousel -->
+  <app-studio-members></app-studio-members>
+  <section id="crew" class="section" style="margin-top: 2%;" >
     <h2>Meet Our Crew</h2>
     <div class="crew-container">
-      <div class="crew-member">
+      <h1> Updating Soon .... </h1>
+      <!-- <div class="crew-member">
         <img src="assets/images/instructor-1.jpg" alt="Instructor 1">
         <div class="bio">
           <h3>John Doe</h3>
-          <p>John has over 15 years of experience teaching jazz and contemporary dance. He holds a degree in Performing Arts and has performed with several top dance companies.</p>
+          <p>John has over 15 years of experience teaching jazz and contemporary dance. He holds a degree in Performing Arts and has performed with several top dance companies. John is known for his innovative choreography and ability to inspire dancers of all levels.</p>
+          <p><strong>Awards:</strong> Best Choreographer, XYZ Dance Awards 2018</p>
         </div>
       </div>
       <div class="crew-member">
         <img src="assets/images/instructor-2.jpg" alt="Instructor 2">
         <div class="bio">
           <h3>Jane Smith</h3>
-          <p>Jane is a professional ballet dancer with extensive experience in both classical ballet and contemporary styles. She has trained dancers at all levels, from beginners to advanced professionals.</p>
+          <p>Jane is a professional ballet dancer with extensive experience in both classical ballet and contemporary styles. She has trained dancers at all levels, from beginners to advanced professionals. Her teaching style is patient and encouraging, focusing on building proper technique and artistic expression.</p>
+          <p><strong>Awards:</strong> Gold Medalist, National Ballet Competition 2017</p>
         </div>
-      </div>
-      <!-- Repeat for other instructors -->
+      </div> -->
     </div>
+   
   </section>
-
-  <!-- Studio Members Carousel -->
-  <app-studio-members></app-studio-members>
-  
 </div>

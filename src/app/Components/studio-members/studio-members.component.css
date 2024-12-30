@@ -1,48 +1,84 @@
-/* The container for the entire carousel */
+/* The container for the entire section */
 .carousel-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  /* The outer container that holds all the items */
-  .carousel {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-  }
-  
-  /* The inner container that holds the carousel items */
-  .carousel-items {
-    display: flex;
-    transition: transform 20s linear; /* Smooth transition of the container */
-  }
-  
-  /* Each item in the carousel */
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgb(49, 49, 49); /* White background */
+  padding: 40px 20px; /* Padding for spacing */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.carousel-container h3 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* The container for each carousel item */
+.carousel-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Each member item */
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 20%;  /* Adjusted width to show 5 items per row */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Light grey background */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  margin: 10px;
+  cursor: pointer; /* Show pointer cursor to indicate clickability */
+}
+
+/* Hover effect on member */
+.carousel-item:hover {
+  transform: translateY(-10px); /* Slight lift effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+/* Styling for the member photo */
+.carousel-item img {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid #7b7b7b; /* Border color */
+  transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+/* Styling for the name text */
+.carousel-item p {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #858585; /* Light grey text */
+  transition: color 0.3s ease;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
   .carousel-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 25%;  /* 4 items will take up 100% of the width */
-    padding: 10px;
-    box-sizing: border-box;
+    width: 45%; /* 2 items per row */
   }
-  
-  .carousel-item img {
-    width: 100%;
-    max-width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 10px;
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    width: 100%; /* 1 item per row on small screens */
   }
-  
-  .carousel-item p {
-    font-size: 1.1rem;
-    color: #333;
-    font-weight: bold;
-  }
-  
+}

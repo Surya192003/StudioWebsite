@@ -1,15 +1,11 @@
 <div class="carousel-container">
-    <h3>Meet Our Dancers</h3>
-    
-    <!-- Container for the carousel -->
-    <div class="carousel" [@scrolling]="members.length">
-      <div class="carousel-items">
-        <!-- Displaying items -->
-        <div *ngFor="let member of members" class="carousel-item">
-          <img [src]="member.photo" alt="{{ member.name }}">
-          <p>{{ member.name }}</p>
-        </div>
-      </div>
+  <h3>Meet Our Dancers</h3>
+  
+  <!-- Displaying items dynamically -->
+  <div class="carousel-items">
+    <div *ngFor="let member of members" class="carousel-item" (click)="goToInstagram(member.instagram)">
+      <img [src]="member.photo" alt="{{ member.name }}">
+      <p>{{ member.name }}</p>
     </div>
   </div>
-  
+</div>
