@@ -280,3 +280,112 @@
         @media only screen and (max-width: 767px) {
           .welcome-area .welcome-content p {
             font-size: 1rem; } }
+
+
+            /* Hero Section */
+.welcome-area {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  background-color: #515151;
+  overflow: hidden;
+}
+
+.welcome-area .background-shape .circle1, 
+.welcome-area .background-shape .circle2, 
+.welcome-area .background-shape .circle3, 
+.welcome-area .background-shape .circle4 {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: -1;
+}
+
+.welcome-area .background-shape .circle1 {
+  width: 2200px;
+  height: 2200px;
+  top: -1100px;
+  right: -1100px;
+}
+
+.welcome-area .background-shape .circle2 {
+  width: 1700px;
+  height: 1700px;
+  top: -850px;
+  right: -850px;
+}
+
+.welcome-area .background-shape .circle3 {
+  width: 1200px;
+  height: 1200px;
+  top: -600px;
+  right: -600px;
+}
+
+.welcome-area .background-shape .circle4 {
+  width: 700px;
+  height: 700px;
+  top: -350px;
+  right: -350px;
+}
+
+.welcome-thumb {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center; /* Center the image */
+}
+
+.welcome-thumb img.hero-image {
+  border-radius: 50%;
+  width: 500px; /* Fixed width, you can adjust this */
+  height: 500px; /* Fixed height to maintain aspect ratio */
+  object-fit: cover; /* Ensure image fills the circle without stretching */
+  margin-left: 100px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+@media only screen and (max-width: 767px) {
+  .welcome-thumb img.hero-image {
+    width: 300px; /* Adjust for mobile */
+    height: 300px; /* Adjust for mobile */
+    margin-left: 0; /* Remove margin */
+  }
+}
+
+.welcome-content h2 {
+  font-size: 3.5rem;
+  color: #ffffff;
+}
+
+.welcome-content p {
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .welcome-area {
+    height: 750px;
+  }
+  .welcome-content h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .welcome-area {
+    height: 650px;
+  }
+  .welcome-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .welcome-area {
+    height: 820px;
+  }
+  .welcome-content h2 {
+    font-size: 1.75rem;
+  }
+}

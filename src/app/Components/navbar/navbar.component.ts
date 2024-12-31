@@ -70,4 +70,18 @@ message: string = '';
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+    const navLinks = document.querySelector('nav ul');
+    if (navLinks) {
+      navLinks.classList.toggle('show', this.menuOpen);
+    }
+
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+      hamburger.classList.toggle('open', this.menuOpen);
+    }
+  }
 }

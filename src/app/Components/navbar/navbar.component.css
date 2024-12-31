@@ -1,25 +1,23 @@
 /* Basic navbar styling */
 header {
     background-color: #222;
-    padding: 10px 20px; /* Adjust padding for a nice look */
+    padding: 10px 20px;
     color: white;
     border-radius: 9px 9px 0 0;
     position: sticky;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Ensure navbar stays on top */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Optional shadow effect */
-    transition: transform 0.3s ease, top 0.3s ease; /* Smooth transition for hide/show */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, top 0.3s ease;
 }
 
 /* When navbar is hidden (scrolling down) */
 header.hidden {
-    transform: translateY(-100%); /* Moves the navbar completely out of the viewport */
-    top: -50px; /* Adjust if you need a bit of space */
+    transform: translateY(-100%);
+    top: -50px;
 }
-
-/* Pinned state styling (when navbar is pinned and on top) */
 
 /* Navbar flex layout */
 nav {
@@ -28,9 +26,10 @@ nav {
     align-items: center;
 }
 
+/* Logo styling */
 nav .logo {
     display: flex;
-    align-items: center; /* Vertically center the logo */
+    align-items: center;
 }
 
 nav .logo img {
@@ -47,19 +46,98 @@ nav ul {
     margin: 0;
 }
 
+/* Navbar link styles */
 nav ul li {
     margin-left: 45px;
     margin-right: 20px;
 }
 
-/* Navbar link styles */
 nav ul li a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: color 0.3s ease; /* Smooth transition on hover */
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #007BFF; /* Change color on hover */
+    color: #007BFF;
+}
+
+/* Media Queries for mobile responsiveness */
+@media (max-width: 768px) {
+    /* Adjust logo size for smaller screens */
+    nav .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Stack the navbar links vertically on smaller screens */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        background-color: #222; /* Ensure background color remains consistent */
+        position: absolute;
+        top: 60px; /* Adjust depending on the navbar height */
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: none; /* Hide links by default */
+        padding: 20px 0;
+    }
+
+    /* Display the navbar links when the menu is toggled */
+    nav ul.show {
+        display: flex;
+    }
+
+    /* Navbar link styles for mobile */
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 15px; /* Space between links */
+    }
+
+    /* Ensure the menu items are centered and have spacing */
+    nav ul li a {
+        font-size: 1.2rem; /* Increase font size for readability */
+    }
+
+    /* Add a hamburger menu icon for mobile */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        z-index: 2000;
+    }
+
+    /* Hamburger icon styling */
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.3s ease;
+    }
+
+    /* Change the hamburger icon when the menu is open */
+    .hamburger.open div:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 8px;
+    }
+
+    .hamburger.open div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open div:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -8px;
+    }
+}
+
+/* Additional padding to ensure smooth transition when the navbar is hidden */
+body {
+    padding-top: 70px; /* Adjust based on navbar height */
 }
