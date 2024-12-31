@@ -7,7 +7,7 @@ import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
 isHidden: any;
-phoneNumber: string = '+918179091230';
+phoneNumber: string = '+919110745710';
 message: string = '';
   constructor(public router : Router) {}
   Take_to_contact_Us(){
