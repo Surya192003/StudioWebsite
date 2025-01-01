@@ -9,6 +9,7 @@ import { StudioMembersComponent } from './Components/studio-members/studio-membe
 import { BackgroundComponent } from './Components/background/background.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
     NavbarComponent,
     StudioMembersComponent,
     BackgroundComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
