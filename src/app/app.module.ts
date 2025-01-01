@@ -10,6 +10,7 @@ import { BackgroundComponent } from './Components/background/background.componen
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './Components/footer/footer.component';
+import { MapComponent } from './Components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     StudioMembersComponent,
     BackgroundComponent,
     FooterComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
