@@ -1,0 +1,223 @@
+/* Global reset for all elements */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', serif; 
+  font-weight: 400;
+  font-size: 16px;
+  background-color: #2d2d2d;
+  display: flex;             /* Use flexbox for the layout */
+  flex-direction: column;    /* Stack elements vertically */
+  min-height: 100vh;         /* Ensure body takes at least full height */
+  margin: 0;                 /* Remove default margin */
+}
+
+app-navbar {
+  /* Ensure navbar doesn't interfere with layout */
+  width: 100%;
+}
+
+.container {
+  flex: 1;                     /* Container takes up available space */
+  display: flex;
+  flex-direction: column;      /* Stack children vertically (form + footer) */
+  justify-content: flex-start; /* Align content at the top */
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-card {
+  width: 100%;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: #f4f4f4;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #333;
+  background-color: #fff;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #444;
+}
+
+.forgot-link,
+.signup-link {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.forgot-link:hover,
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Styling for the footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%; /* Ensure it spans the entire width */
+  margin-top: auto; /* Push it to the bottom of the container */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.logo img {
+  width: 120px;
+}
+
+.social-media a {
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-media a:hover {
+  transform: scale(1.1);
+}
+
+.social-media img {
+  width: 54px;
+  height: auto;
+}
+
+/* Responsive Design for Mobile and Tablets */
+@media (max-width: 768px) {
+  body {
+      padding: 10px;
+  }
+
+  .container {
+      max-width: 100%;
+      padding: 15px;
+  }
+
+  .form-card {
+      padding: 20px;
+  }
+
+  .form-title {
+      font-size: 20px;
+  }
+
+  .form-control {
+      font-size: 16px;
+  }
+
+  .btn {
+      font-size: 14px;
+  }
+
+  .forgot-link,
+  .signup-link {
+      font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 10px;
+  }
+
+  .form-card {
+      padding: 15px;
+  }
+
+  .form-title {
+      font-size: 18px;
+  }
+
+  .form-control {
+      font-size: 16px;
+  }
+
+  .btn {
+      font-size: 14px;
+  }
+
+  .forgot-link,
+  .signup-link {
+      font-size: 12px;
+  }
+}

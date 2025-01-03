@@ -11,6 +11,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './Components/footer/footer.component';
 import { MapComponent } from './Components/map/map.component';
+import { LoginComponent } from './Components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './Components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +24,16 @@ import { MapComponent } from './Components/map/map.component';
     BackgroundComponent,
     FooterComponent,
     MapComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

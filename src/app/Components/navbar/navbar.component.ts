@@ -10,6 +10,9 @@ isHidden: any;
 phoneNumber: string = '+919110745710';
 message: string = '';
   constructor(public router : Router) {}
+  taketosignin(){
+    this.router.navigate(['/signup'])
+  }
   Take_to_contact_Us(){
     const formattedMessage = encodeURIComponent(this.message);
     const whatsappURL = `https://wa.me/${this.phoneNumber}?text=${formattedMessage}`;

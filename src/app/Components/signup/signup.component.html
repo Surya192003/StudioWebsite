@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="form-wrapper">
+      <!-- Sign-In Form -->
+      <div class="form-card">
+        <h2 class="form-title">Sign Up</h2>
+        <form (ngSubmit)="signup()" #signupForm="ngForm">
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              [(ngModel)]="fullName"
+              class="form-control"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+  
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="email"
+              class="form-control"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+  
+          <!-- Phone Number -->
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              [(ngModel)]="phoneNumber"
+              class="form-control"
+              placeholder="Enter your phone number"
+              required
+            />
+          </div>
+  
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              [(ngModel)]="password"
+              class="form-control"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+  
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              [(ngModel)]="confirmPassword"
+              class="form-control"
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+  
+          <!-- Error Message -->
+          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+          <!-- Submit Button -->
+          <button type="submit" class="btn" [disabled]="signupForm.invalid">Sign Up</button>
+        </form>
+  
+        <div class="form-footer">
+          <p>Already have an account? <a (click)="taketologin()" class="login-link">Log In</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
