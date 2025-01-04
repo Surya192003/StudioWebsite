@@ -23,6 +23,14 @@ export class LoginComponent {
       response => {
         console.log(response.data);
         if (response.message === 'Login Successful') {
+          localStorage.setItem('userid',response.data.id);
+          localStorage.setItem('username',response.data.fullName);
+          localStorage.setItem('email',response.data.email);
+          localStorage.setItem('phonenumber',response.data.phonenumber);
+          localStorage.setItem('subscription_type',response.data.subscription_type);
+          if(response.data.id){      
+          this.router.navigate(['/UserDAshboard'])
+          }
         }
       },
       error => {

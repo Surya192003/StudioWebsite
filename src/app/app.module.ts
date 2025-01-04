@@ -14,6 +14,16 @@ import { MapComponent } from './Components/map/map.component';
 import { LoginComponent } from './Components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './Components/signup/signup.component';
+import { ProfileComponent } from './UserComponents/profile/profile.component';
+import { EventsComponent } from './UserComponents/events/events.component';
+import { SubscriptionComponent } from './UserComponents/subscription/subscription.component';
+import { CalendarComponent } from './UserComponents/calendar/calendar.component';
+import { UserDashboardComponent } from './UserComponents/user-dashboard/user-dashboard.component';
+import { UserNavbarComponent } from './UserComponents/user-navbar/user-navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReelDialogComponent } from './UserComponents/calendar/calendar.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';  // Add this import
 
 @NgModule({
   declarations: [
@@ -26,6 +36,13 @@ import { SignupComponent } from './Components/signup/signup.component';
     MapComponent,
     LoginComponent,
     SignupComponent,
+    ProfileComponent,
+    EventsComponent,
+    SubscriptionComponent,
+    CalendarComponent,
+    UserDashboardComponent,
+    UserNavbarComponent,
+    ReelDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +50,10 @@ import { SignupComponent } from './Components/signup/signup.component';
     FormsModule,
     MatDialogModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

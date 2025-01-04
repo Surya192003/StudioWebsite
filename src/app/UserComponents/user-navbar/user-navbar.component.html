@@ -1,0 +1,14 @@
+<div class="navbar">
+    <div class="navbar-header">
+      <span class="username">Hello, {{ username }}</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+        <li><a routerLink="/events" routerLinkActive="active">Events</a></li>
+        <li><a routerLink="/subscription" routerLinkActive="active">Subscription</a></li>
+        <li><button (click)="logout()">Logout</button></li>
+      </ul>
+    </nav>
+  </div>
+  

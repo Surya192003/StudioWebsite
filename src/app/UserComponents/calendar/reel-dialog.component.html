@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Conversation for {{ data.date | date: 'MMMM dd, yyyy' }}</h2>
+
+<mat-dialog-content>
+  <div class="message-list">
+    <div *ngFor="let message of data.messages" class="message">
+      <p>{{ message }}</p>
+    </div>
+  </div>
+
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="newMessage" placeholder="Type your message..." rows="3"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="sendMessage()">Send</button>
+</mat-dialog-actions>
