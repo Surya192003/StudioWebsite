@@ -25,10 +25,10 @@ export class SignupComponent {
       const userData = {
         fullName: this.fullName,
         email: this.email,
-        phoneNumber: this.phoneNumber,
+        phonenumber: this.phoneNumber,
         password: this.password
       } 
-      this.authService.signup(userData).subscribe(
+      this.authService.Signup(userData).subscribe(
         Response => {
           if(Response.message == 'User created successfully'){
             console.log('Sign Up Successful:', {

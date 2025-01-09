@@ -6,11 +6,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-navbar.component.css']
 })
 export class UserNavbarComponent implements OnInit {
-  username: string = 'JohnDoe';  // This can be dynamically loaded (e.g., from a user service)
+  username: any ;  // This can be dynamically loaded (e.g., from a user service)
 
   constructor(public Router : Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.username = localStorage.getItem('username');
+  }
 
   logout(): void {
     localStorage.clear();
